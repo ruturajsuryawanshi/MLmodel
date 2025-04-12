@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Iris Flower Predictor</title>
+    <style>
+        body {
+            font-family: 'Monaco',monospace;
+            background-color: #f0f0f0;
+            padding: 60px;
+            margin: 10px;
+        }
+
+        h2 {
+            font-family: cursive;
+            text-align: center;
+            text-shadow: 2px 1px 3px ;
+            
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            width: 400px;
+            height: auto;
+            margin: auto;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            margin-top: 15px;
+            width: 100%;
+            padding: 8px;
+            background-color: #28a745;
+            color: white;
+            border: 1px solid black;
+            border-radius: 4px;
+        }
+
+        .result {
+            font-family: 'Century Gothic';
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>IRIS FLOWER CLASSIFICATION</h2>
+
+    <form action="/predict" method="POST">
+        <label>Sepal Length:</label>
+        <input type="text" name="sepal_length">
+
+        <label>Sepal Width:</label>
+        <input type="text" name="sepal_width">
+
+        <label>Petal Length:</label>
+        <input type="text" name="petal_length">
+
+        <label>Petal Width:</label>
+        <input type="text" name="petal_width">
+
+        <input type="submit" value="Predict">
+
+        <div class="result">
+            Predicted Class For Given Parameters : {{ result }}
+        </div>
+    </form>
+
+</body>
+</html>
