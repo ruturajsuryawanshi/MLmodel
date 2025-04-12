@@ -1,28 +1,110 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Iris Flower Predictor</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #dce35b, #45b649);
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+            color: #fff;
+            font-size: 2.5em;
+            margin-top: 40px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+        }
+
+        form {
+            background-color: #ffffff;
+            width: 420px;
+            margin: 40px auto;
+            padding: 30px 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        form:hover {
+            transform: scale(1.02);
+        }
+
+        label {
+            font-weight: 600;
+            color: #333;
+            margin-top: 10px;
+            display: block;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        .result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #333;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+        }
+
+    </style>
 </head>
 <body>
 
-    <h2>Iris Flower Classification</h2>
+    <h2>🌸 Iris Flower Classification 🌸</h2>
 
     <form action="/predict" method="POST">
-        <label>Sepal Length:</label>
-        <input type="text" name="sepal_length"><br><br>
+        <label for="sepal_length">Sepal Length (cm):</label>
+        <input type="text" name="sepal_length" id="sepal_length" required>
 
-        <label>Sepal Width:</label>
-        <input type="text" name="sepal_width"><br><br>
+        <label for="sepal_width">Sepal Width (cm):</label>
+        <input type="text" name="sepal_width" id="sepal_width" required>
 
-        <label>Petal Length:</label>
-        <input type="text" name="petal_length"><br><br>
+        <label for="petal_length">Petal Length (cm):</label>
+        <input type="text" name="petal_length" id="petal_length" required>
 
-        <label>Petal Width:</label>
-        <input type="text" name="petal_width"><br><br>
+        <label for="petal_width">Petal Width (cm):</label>
+        <input type="text" name="petal_width" id="petal_width" required>
 
-        <input type="submit" value="Predict"><br><br>
+        <input type="submit" value="🌼 Predict">
 
-        <strong>Predicted Class:</strong> {{ result }}
+        <div class="result">
+            Predicted Class for Given Parameters: {{ result }}
+        </div>
     </form>
 
 </body>
