@@ -6,7 +6,7 @@ model=pickle.load(open('iris_model.pkl','rb'))
 @app.route('/')
 def home():
     result =''
-    return render_template('index1.html',**locals())
+    return render_template('index0.html',**locals())
 
 
 @app.route('/predict',methods=['POST','GET'])
@@ -16,7 +16,7 @@ def predict():
     petal_length = float(request.form['petal_length'])
     petal_width = float(request.form['petal_width'])
     result = model.predict([[sepal_length, sepal_width, petal_length, petal_width]])
-    return render_template('index1.html', **locals())
+    return render_template('index0.html', **locals())
 
 if __name__=='__main__':
     app.run(debug=True)
